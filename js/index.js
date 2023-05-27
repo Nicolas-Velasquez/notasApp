@@ -1,5 +1,5 @@
 let notas = [
-    {id:1, nombre:"Actividad 1", nota:3},
+    {id:1, nombre:"Actividad 1", nota:2},
     {id:2, nombre:"Actividad 2", nota:2.5},
     {id:3, nombre:"Actividad 3", nota:4}
 ]
@@ -12,7 +12,7 @@ function mostrarMensaje(promedio){
 
 function mostrarActividades(){
     let filas = ""
-    let sumatoria = 0
+    let contador = 0
     for(let index in notas){
         let actividad = notas[index]
         filas += "<tr>"
@@ -24,17 +24,17 @@ function mostrarActividades(){
         filas += "      <button onclick='eliminarActividad("+index+")'>Eliminar</button>"
         filas += "  </td>"
         filas += "</tr>"
-        sumatoria += parseFloat(actividad.nota)
+        contador += parseFloat(actividad.nota)
     }
-    let promedio = sumatoria / notas.length
-    document.getElementById("promediosTb").getElementsByTagName("tbody")[0].innerHTML = filas
-    document.getElementById("promedioText").innerText = "Su promedio es: "+ promedio
+    let promedio = contador / notas.length
+    document.getElementById("tablaPromedios").getElementsByTagName("tbody")[0].innerHTML = filas
+    document.getElementById("textoPromedio").innerText = "Su promedio es: "+ promedio
     mostrarMensaje(promedio)
 }
 
 mostrarActividades()
 
-document.getElementById("crearBtn").addEventListener("click", () =>{
+document.getElementById("botonCrear").addEventListener("click", () =>{
     x = -1
     document.getElementById("actividad").setAttribute("value", "")
     document.getElementById("nota").setAttribute("value", "")
@@ -74,12 +74,12 @@ function modificarActividad(posicionArray){
     document.getElementById("formActividad").reset()
     document.getElementById("formularioModal").classList.remove("close-modal")
     document.getElementById("tituloModal").innerText = "Modificar actividad"
-    let actividad = actividades[posicionArray]
+    let actividad = notas[posicionArray]
     document.getElementById("actividad").setAttribute("value", actividad.nombre)
     document.getElementById("nota").setAttribute("value", actividad.nota)
 }
 
 function eliminarActividad(index){
-    actividades.splice(index, 1)
+    notas.splice(index, 1)
     mostrarActividades()
 }
