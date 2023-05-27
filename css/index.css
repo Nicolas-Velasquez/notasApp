@@ -1,0 +1,68 @@
+.modal-content{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content .form-content{
+    border: 1px solid #000;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0px 0px 15px 4px rgb(85, 85, 85, 0.47);
+    position: relative;
+}
+
+.botonCerrar{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0px;
+    color: #000;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+form .input-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.marg-button-16{
+    margin: 16px;
+}
+
+.botonContenido{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botonContenido button{
+    background-color: #008000;
+    border: 0px;
+    height: 30px;
+    width: 100px;
+    color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.botonContenido button:hover{
+    background-color: #fff;
+    border: 1px solid #008000;
+    color:#008000;
+}
+
+.close-modal{
+    display: none;
+}
